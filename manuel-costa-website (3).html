@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Manuel Costa — Strategic Communications & Digital Storytelling</title>
+<meta name="description" content="Brussels-based communications professional specialising in digital strategy, content creation, and strategic storytelling. Currently Social Media Assistant at ALDE Party."/>
+<meta name="author" content="Manuel Costa"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230e7490'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='%23ffffff' font-family='Georgia,serif'>M</text></svg>"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #0e7490;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: rgba(15,23,42,0.07);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+body { font-family: var(--sans); background: #ffffff; color: var(--text); }
+a { color: inherit; text-decoration: none; }
+
+nav { position: relative; width: 100%; border-bottom: 1px solid var(--border); background: #ffffff; z-index: 40; }
+.nav-content { max-width: 1100px; margin: 0 auto; padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--gold); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-link { cursor: pointer; color: #64748b; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+.nav-link:hover { color: var(--gold); }
+.nav-cv a { padding: 9px 18px; border: 1px solid var(--border); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 1px; display: inline-block; transition: all 0.2s; }
+.nav-cv a:hover { border-color: var(--gold); color: var(--gold); background: rgba(14,116,144,0.05); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 22px; height: 1px; background: var(--text-muted); display: block; transition: all 0.3s; }
+.mobile-menu { display: none; flex-direction: column; gap: 16px; padding: 20px 16px; border-bottom: 1px solid var(--border); }
+.mobile-menu.hidden { display: none !important; }
+
+.section-pad { padding: 110px 48px; }
+.section-max-width { max-width: 1100px; margin: 0 auto; }
+.section-header { display: flex; align-items: center; gap: 12px; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.section-header span { width: 32px; height: 1px; background: var(--gold); }
+.section-title { font-family: var(--serif); font-size: clamp(30px,3.5vw,48px); font-weight: 300; line-height: 1.15; margin-bottom: 64px; }
+.section-title em { font-style: italic; }
+
+.hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 110px 48px; }
+.hero-circles { position: absolute; inset: 0; pointer-events: none; }
+.hero-circles div { position: absolute; border: 1px solid var(--gold); border-radius: 50%; opacity: 0.3; }
+.hero-content { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr; gap: 40px; position: relative; z-index: 2; }
+.hero-text h1 { font-family: var(--serif); font-size: clamp(46px,6.5vw,80px); font-weight: 300; line-height: 1.06; margin-bottom: 24px; }
+.hero-tagline { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: inline-block; }
+.pulse { width: 6px; height: 6px; border-radius: 50%; background: #16a34a; display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
+.hero-desc { font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 40px; max-width: 480px; font-weight: 300; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.cta-primary { background: var(--gold); color: #fff; padding: 12px 28px; border-radius: 1px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border: none; display: inline-block; transition: all 0.2s; }
+.cta-primary:hover { background: #0891b2; transform: translateY(-1px); }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.about-text { font-size: 15px; line-height: 1.85; color: var(--text-muted); font-weight: 300; }
+
+.exp-timeline { display: flex; flex-direction: column; gap: 48px; max-width: 780px; }
+.exp-row { border-left: 1px solid var(--border); padding-left: 28px; position: relative; }
+.exp-dot { width: 7px; height: 7px; border-radius: 50%; position: absolute; left: -4px; top: 4px; }
+.exp-dot.current { background: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.15); }
+.exp-dot.past { background: var(--gold); }
+.exp-title { font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 4px; }
+.exp-org { font-size: 13px; color: var(--gold); font-weight: 300; }
+.exp-dates-current { font-size: 11px; color: #16a34a; letter-spacing: 0.05em; }
+.exp-dates-past { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; }
+.exp-location { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+.exp-summary { font-size: 13px; line-height: 1.7; color: var(--text-muted); font-weight: 300; max-width: 680px; margin-top: 8px; }
+
+.projects-list { display: flex; flex-direction: column; gap: 2px; }
+.project-card { border-top: 1px solid var(--border); padding: 36px 0; }
+.case-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; cursor: pointer; }
+.case-number { font-family: var(--serif); font-size: 13px; font-weight: 300; color: rgba(14,116,144,0.5); min-width: 28px; }
+.case-title-group { display: flex; gap: 28px; flex-wrap: wrap; align-items: baseline; }
+.case-title { font-family: var(--serif); font-size: clamp(20px,2.5vw,28px); font-weight: 400; line-height: 1.2; margin-bottom: 6px; }
+.case-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+.case-meta-org { font-size: 11px; color: var(--gold); font-weight: 300; }
+.case-meta-role { font-size: 10px; color: var(--text-muted); letter-spacing: 0.06em; }
+.case-preview { font-size: 11px; color: var(--gold); letter-spacing: 0.02em; margin-top: 10px; font-weight: 400; }
+.case-controls { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+.case-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); background: rgba(14,116,144,0.07); padding: 3px 9px; border-radius: 1px; }
+.case-plus { width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 16px; transition: all 0.3s; flex-shrink: 0; }
+.case-header:hover .case-plus { color: var(--gold); border-color: var(--gold); }
+.case-body { overflow: hidden; max-height: 0; transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1); }
+.case-body.open { max-height: 5000px; }
+.case-stats { padding-top: 36px; display: flex; gap: 40px; flex-wrap: wrap; }
+.case-stat { flex: 1; min-width: 140px; }
+.case-stat-value { font-family: var(--serif); font-size: clamp(34px,4vw,46px); font-weight: 400; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.case-stat-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-weight: 400; }
+.case-sections { padding-top: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+.case-section-label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.case-section-text { font-size: 13px; line-height: 1.85; color: var(--text-muted); font-weight: 300; }
+.case-videos { padding-top: 32px; }
+.case-videos-label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.videos-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+.video-wrapper { width: 260px; display: flex; flex-direction: column; gap: 8px; }
+.video-container { position: relative; width: 100%; padding-top: 177.78%; border: 1px solid var(--border); overflow: hidden; background: #e8edf2; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { font-size: 10px; color: var(--text-muted); letter-spacing: 0.04em; }
+.case-links { padding-top: 24px; display: flex; gap: 16px; flex-wrap: wrap; }
+.ext-link { font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; cursor: pointer; transition: color 0.2s; }
+.ext-link:hover { color: var(--gold); }
+
+.skills-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.skill-tag { border: 1px solid rgba(15,23,42,0.08); padding: 7px 16px; border-radius: 1px; font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; font-weight: 300; transition: all 0.2s; }
+.skill-tag:hover { border-color: rgba(14,116,144,0.35); color: #0891b2; background: rgba(14,116,144,0.05); }
+
+.contact-content { text-align: center; max-width: 800px; margin: 0 auto; }
+.contact-heading { font-family: var(--serif); font-size: clamp(40px,5vw,64px); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
+.contact-desc { font-size: 15px; line-height: 1.8; color: var(--text-muted); margin-bottom: 40px; font-weight: 300; }
+.contact-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  nav { position: relative; }
+  .nav-content { padding: 14px 16px; }
+  .nav-links { display: none; }
+  .nav-cv { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+  .section-pad { padding: 60px 20px; }
+  .hero { min-height: auto; padding: 60px 20px; }
+  .hero-circles { display: none; }
+  .hero-text h1 { font-size: 36px; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .case-header { flex-direction: column; gap: 16px; }
+  .case-title-group { flex-direction: column; gap: 8px; }
+  .case-controls { flex-direction: row-reverse; }
+  .case-sections { grid-template-columns: 1fr; gap: 24px; }
+  .case-stats { flex-direction: column; }
+  .videos-grid { flex-direction: column; align-items: center; }
+  .video-wrapper { width: 100%; max-width: 100%; }
+  .contact-heading { font-size: 32px; }
+  .contact-ctas { flex-direction: column; }
+  .contact-ctas a { width: 100%; text-align: center; }
+
+    
+    /* Experience section mobile fix */
+    #experience { padding: 60px 20px; }
+    .exp-timeline { gap: 32px; }
+    .exp-row { padding-left: 12px; }
+    .exp-title { font-size: 16px; }
+    .exp-org { font-size: 12px; }
+    .exp-summary { font-size: 13px; }
+    
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-content">
+    <div class="nav-logo">Manuel Costa</div>
+    <div class="nav-links">
+      <span class="nav-link" data-target="about">About</span>
+      <span class="nav-link" data-target="experience">Experience</span>
+      <span class="nav-link" data-target="projects">Projects</span>
+      <span class="nav-link" data-target="skills">Skills</span>
+      <span class="nav-link" data-target="contact">Contact</span>
+    </div>
+    <div class="nav-cv">
+      <a href="Manuel_Costa_CV.pdf" download>Download CV</a>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu hidden" id="mobile-menu">
+    <span class="nav-link" data-target="about">About</span>
+    <span class="nav-link" data-target="experience">Experience</span>
+    <span class="nav-link" data-target="projects">Projects</span>
+    <span class="nav-link" data-target="skills">Skills</span>
+    <span class="nav-link" data-target="contact">Contact</span>
+    <a href="Manuel_Costa_CV.pdf" download class="cta-primary" style="text-align:center;">Download CV</a>
+  </div>
+</nav>
+
+<section class="hero" id="about">
+  <div class="hero-circles">
+    <div style="width:500px; height:500px; top:0; left:0;"></div>
+    <div style="width:380px; height:380px; top:60px; left:60px;"></div>
+    <div style="width:260px; height:260px; top:120px; left:120px;"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-tagline"><span class="pulse"></span>ALDE Party · Brussels</div>
+      <h1>Strategic Communications & Digital Storytelling</h1>
+      <p class="hero-desc">Brussels-based communications professional specialising in digital strategy, content creation, and strategic storytelling with experience across EU institutions, public affairs, and political campaigns.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-primary">Get In Touch</a>
+        <a href="https://linkedin.com/in/manuelnevesdacostaferreira" target="_blank" style="border: 1px solid var(--border); padding: 12px 28px; border-radius: 1px; display: inline-block; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'; this.style.background='rgba(14,116,144,0.05)';" onmouseout="this.style.borderColor='var(--border)'; this.style.color='inherit'; this.style.background='transparent';">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="background: rgba(15,23,42,0.012);">
+  <div class="section-max-width">
+    <div class="section-header">
+      <span></span>
+      <div>About</div>
+    </div>
+    <h2 class="section-title">A European communication profile built across institutions, campaigns, and digital media</h2>
+    <div class="about-grid">
+      <p class="about-text">I'm a Brussels-based communications professional working across digital strategy, content creation, and media relations. I currently serve as Social Media Assistant at ALDE Party, where I lead digital strategy and content production across social platforms, working alongside high-profile figures including European Commissioners and national ministers.</p>
+      <p class="about-text">With an MA in Political Communication from Cardiff University and an international background, my experience spans institutional communication, public affairs consultancy, digital and social media strategy, and full campaign management, translating complex messages into clear, engaging communication for diverse audiences.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="experience" style="background: rgba(15,23,42,0.012);">
+  <div class="section-max-width">
+    <div class="section-header">
+      <span></span>
+      <div>Career</div>
+    </div>
+    <h2 class="section-title">Experience & <em>Trajectory</em></h2>
+    <div class="exp-timeline">
+      <div class="exp-row">
+        <div class="exp-dot current"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div class="exp-title">Social Media Assistant</div>
+            <div class="exp-org">ALDE Party</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="exp-dates-current"><span style="width:5px;height:5px;border-radius:50%;background:#16a34a;display:inline-block;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite;"></span>September 2026 – Present</div>
+            <div class="exp-location">Brussels, Belgium</div>
+          </div>
+        </div>
+        <p class="exp-summary">Lead digital strategy and content production across all social platforms. Audited social media output, optimised content strategy, and produced multimedia content across Instagram, TikTok, LinkedIn, X, Facebook and YouTube. Doubled TikTok followers within the first month and generated 5,021,792 views across platforms.</p>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-dot past"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div class="exp-title">Key Partner Relations Trainee</div>
+            <div class="exp-org">European Parliament – DG COMM</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="exp-dates-past">March – July 2026</div>
+            <div class="exp-location">Brussels, Belgium</div>
+          </div>
+        </div>
+        <p class="exp-summary">Served as communications liaison for international broadcasters, journalists and MEPs utilising the Parliament's audiovisual facilities. Conducted 30+ guided facility tours for 370+ visiting media professionals and stakeholders. Produced briefing materials and promotional content demonstrating the Parliament's broadcasting capabilities.</p>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-dot past"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div class="exp-title">EU Public Policy Communications Intern</div>
+            <div class="exp-org">Political Intelligence</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="exp-dates-past">September 2025 – March 2026</div>
+            <div class="exp-location">Brussels, Belgium</div>
+          </div>
+        </div>
+        <p class="exp-summary">Managed communications across three client accounts in mobility, digital and food sectors. Drafted press releases, newsletters, op-eds and social media content. Executed full media relations and journalist outreach. Conceived and delivered a human-centred storytelling campaign showcasing clients' values in human terms.</p>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-dot past"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div class="exp-title">Social Media Trainee</div>
+            <div class="exp-org">ALDE Party</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="exp-dates-past">September 2024 – 2025</div>
+            <div class="exp-location">Brussels, Belgium</div>
+          </div>
+        </div>
+        <p class="exp-summary">Produced 274 pieces of multimedia content across Instagram, TikTok, LinkedIn, X and Facebook covering major political events. Relaunched TikTok strategy and hit annual growth targets within first quarter. Grew Instagram and TikTok by 1,000+ followers each.</p>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-dot past"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div class="exp-title">Communications Director</div>
+            <div class="exp-org">Parliamentary Campaign – Coimbra</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="exp-dates-past">January – March 2024</div>
+            <div class="exp-location">Coimbra, Portugal</div>
+          </div>
+        </div>
+        <p class="exp-summary">Led campaign communications end-to-end, shaping messaging, media strategy and digital communications. Grew candidate's social media following by 500 and local party branch by 200, during a campaign that saw a 2,000-vote increase over the previous general election.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="projects">
+  <div class="section-max-width">
+    <div class="section-header">
+      <span></span>
+      <div>Featured Work</div>
+    </div>
+    <h2 class="section-title">Digital Strategy<br/><em>&amp; Content</em></h2>
+    <div class="projects-list">
+
+      <div class="project-card">
+        <div class="case-header" onclick="this.nextElementSibling.classList.toggle('open')">
+          <div class="case-title-group">
+            <div class="case-number">01</div>
+            <div>
+              <h3 class="case-title">ALDE Party – Current Digital Strategy</h3>
+              <div class="case-meta">
+                <span class="case-meta-org">Alliance of Liberals and Democrats for Europe</span>
+                <span style="width:3px;height:3px;border-radius:50%;background:#6b7685;display:inline-block;"></span>
+                <span class="case-meta-role">Social Media Assistant · Current</span>
+              </div>
+              <div class="case-preview">Doubled followers · 5M+ platform views · Multi-platform strategy</div>
+            </div>
+          </div>
+          <div class="case-controls">
+            <span class="case-tag">EU Institution</span>
+            <div class="case-plus">+</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-stats">
+            <div class="case-stat">
+              <div class="case-stat-value">2x</div>
+              <div class="case-stat-label">TikTok followers (1 month)</div>
+            </div>
+            <div class="case-stat">
+              <div class="case-stat-value">5M+</div>
+              <div class="case-stat-label">Total platform views</div>
+            </div>
+            <div class="case-stat">
+              <div class="case-stat-value">6</div>
+              <div class="case-stat-label">Active platforms</div>
+            </div>
+          </div>
+          <div class="case-sections">
+            <div class="case-section">
+              <div class="case-section-label">Challenge</div>
+              <p class="case-section-text">The party needed to modernise its digital presence and connect with younger audiences. Content relied on traditional political formats with limited engagement and an underdeveloped presence on emerging platforms compared to other European political families.</p>
+            </div>
+            <div class="case-section">
+              <div class="case-section-label">Approach</div>
+              <p class="case-section-text">Audited the party's 2026 social media output, benchmarked successful practices across European political organisations, and redesigned strategy around platform-native logic. Core shift was moving towards short-form vertical video, faster reactions to developments, and trend-led content with more dynamic tone. Produced content collaborating with European Commissioners and national ministers.</p>
+            </div>
+            <div class="case-section">
+              <div class="case-section-label">Result</div>
+              <p class="case-section-text">Doubled TikTok followers within the first month. Generated 5,021,792 views across platforms during the same period. Sharpened ability to combine data-driven decision-making with creative storytelling and deliver timely content in a fast-paced political environment.</p>
+            </div>
+          </div>
+          <div class="case-videos">
+            <div class="case-videos-label">Work Samples</div>
+            <div class="videos-grid">
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <iframe src="https://player.vimeo.com/video/1235745464?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">September 2026 campaign content</p>
+              </div>
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <iframe src="https://player.vimeo.com/video/1235745465?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Platform-native social series</p>
+              </div>
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <iframe src="https://player.vimeo.com/video/1235745467?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Institutional collaboration coverage</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-links">
+            <a class="ext-link" href="https://instagram.com/aldeparty" target="_blank">Follow on Instagram ↗</a>
+            <a class="ext-link" href="https://tiktok.com/@aldeparty" target="_blank">Follow on TikTok ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="case-header" onclick="this.nextElementSibling.classList.toggle('open')">
+          <div class="case-title-group">
+            <div class="case-number">02</div>
+            <div>
+              <h3 class="case-title">ALDE Party – Platform Strategy Relaunch</h3>
+              <div class="case-meta">
+                <span class="case-meta-org">Alliance of Liberals and Democrats for Europe</span>
+                <span style="width:3px;height:3px;border-radius:50%;background:#6b7685;display:inline-block;"></span>
+                <span class="case-meta-role">Social Media Trainee · 2024–2025</span>
+              </div>
+              <div class="case-preview">274 content pieces · 1,000+ followers per platform · Q1 targets hit</div>
+            </div>
+          </div>
+          <div class="case-controls">
+            <span class="case-tag">Political Organisation</span>
+            <div class="case-plus">+</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-stats">
+            <div class="case-stat">
+              <div class="case-stat-value">274</div>
+              <div class="case-stat-label">Content pieces produced</div>
+            </div>
+            <div class="case-stat">
+              <div class="case-stat-value">1,000+</div>
+              <div class="case-stat-label">New followers per platform</div>
+            </div>
+            <div class="case-stat">
+              <div class="case-stat-value">20K</div>
+              <div class="case-stat-label">Top video views</div>
+            </div>
+          </div>
+          <div class="case-sections">
+            <div class="case-section">
+              <div class="case-section-label">Challenge</div>
+              <p class="case-section-text">Following a difficult European election cycle, the party's digital presence had struggled to connect with younger audiences. Content strategy relied on traditional political formats resulting in limited reach and weak engagement on emerging platforms.</p>
+            </div>
+            <div class="case-section">
+              <div class="case-section-label">Approach</div>
+              <p class="case-section-text">Combined analytical research with creative implementation: benchmarked successful practices across European political organisations, then redesigned content strategy around platform-native logic. Core strategic shift was moving towards short-form vertical video, faster reactions, trend-led content, and more dynamic tone tailored to each platform's audience behaviour.</p>
+            </div>
+            <div class="case-section">
+              <div class="case-section-label">Result</div>
+              <p class="case-section-text">Produced 274 pieces of content and grew Instagram and TikTok followings by 1,000+ each, relaunching the TikTok presence and hitting full annual growth target within first quarter. Most-viewed video reached 20,000 views. Role sharpened ability to combine data-driven decision-making with creative storytelling.</p>
+            </div>
+          </div>
+          <div class="case-videos">
+            <div class="case-videos-label">Work Samples</div>
+            <div class="videos-grid">
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <iframe src="https://player.vimeo.com/video/1198517688?h=e837a88e0e&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Weekly EU highlights – breaking news format</p>
+              </div>
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <iframe src="https://player.vimeo.com/video/1198517690?h=cf0b39c942&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">MFF explainer – making EU policy accessible</p>
+              </div>
+              <div class="video-wrapper">
+                <div class="video-container">
+                  <iframe src="https://player.vimeo.com/video/1198517662?h=f3855fd1d2&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Commissioner coverage – confirmation hearing</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-links">
+            <a class="ext-link" href="https://instagram.com/aldeparty" target="_blank">More on Instagram ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="skills">
+  <div class="section-max-width">
+    <div class="section-header">
+      <span></span>
+      <div>Skills</div>
+    </div>
+    <h2 class="section-title">Expertise & Tools</h2>
+    <div class="skills-list">
+      <div class="skill-tag">Social Media Strategy</div>
+      <div class="skill-tag">Digital Content</div>
+      <div class="skill-tag">Political Communication</div>
+      <div class="skill-tag">Strategic Communications</div>
+      <div class="skill-tag">Media Relations</div>
+      <div class="skill-tag">Public Affairs</div>
+      <div class="skill-tag">Campaign Communications</div>
+      <div class="skill-tag">Content Strategy</div>
+      <div class="skill-tag">Audience Analytics</div>
+      <div class="skill-tag">Canva</div>
+      <div class="skill-tag">CapCut</div>
+      <div class="skill-tag">Adobe Suite</div>
+      <div class="skill-tag">Portuguese (Native)</div>
+      <div class="skill-tag">English (Fluent)</div>
+      <div class="skill-tag">French (B1)</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" id="contact">
+  <div class="contact-content">
+    <div class="section-header" style="justify-content:center;margin-bottom:32px;">
+      <span></span>
+      <div>Contact</div>
+    </div>
+    <h2 class="contact-heading">Let's build meaningful European communication</h2>
+    <p class="contact-desc">Open to opportunities in political communication, EU affairs, strategic communications, digital engagement, and content strategy.</p>
+    <div class="contact-ctas">
+      <a href="mailto:manuelnevesdacostaferreira@gmail.com" class="cta-primary">Email Me</a>
+      <a href="https://linkedin.com/in/manuelnevesdacostaferreira" target="_blank" style="border: 1px solid var(--border); padding: 12px 28px; border-radius: 1px; display: inline-block; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'; this.style.color='var(--gold)'; this.style.background='rgba(14,116,144,0.05)';" onmouseout="this.style.borderColor='var(--border)'; this.style.color='inherit'; this.style.background='transparent';">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const target = link.dataset.target;
+    const element = document.getElementById(target);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      mobileMenu.classList.add('hidden');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
